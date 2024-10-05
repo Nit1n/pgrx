@@ -133,7 +133,7 @@ impl From<u64> for Datum {
             Datum::from(val as usize)
         } else {
             unsafe {
-                let ptr = crate::palloc(size_of::<u64>()) as *mut u64;
+                let ptr = crate::palloc(std::mem::size_of::<u64>()) as *mut u64;
                 *ptr = val;
                 Datum::from(ptr)
             }
@@ -169,7 +169,7 @@ impl From<i64> for Datum {
             Datum::from(val as usize)
         } else {
             unsafe {
-                let ptr = crate::palloc(size_of::<i64>()) as *mut i64;
+                let ptr = crate::palloc(std::mem::size_of::<i64>()) as *mut i64;
                 *ptr = val;
                 Datum::from(ptr)
             }
