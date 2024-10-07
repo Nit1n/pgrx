@@ -47,7 +47,7 @@ rustc-args = ["--cfg", "docsrs"]
 
 [dependencies]
 pgrx-macros.workspace = true
-pgrx-pg-sys.workspace = true
+pgrx-pg-sys = { git = "https://github.com/Nit1n/pgrx", branch = "develop", version = "0.12.5" }
 pgrx-sql-entity-graph.workspace = true
 
 thiserror.workspace = true # error handling and logging

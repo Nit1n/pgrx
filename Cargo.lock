@@ -332,8 +332,8 @@ dependencies = [
  "libc",
  "object",
  "owo-colors 4.0.0",
- "pgrx-pg-config",
- "pgrx-sql-entity-graph",
+ "pgrx-pg-config 0.12.5",
+ "pgrx-sql-entity-graph 0.12.5",
  "proc-macro2",
  "quote",
  "regex",
@@ -1496,9 +1496,9 @@ dependencies = [
  "heapless",
  "libc",
  "once_cell",
- "pgrx-macros",
- "pgrx-pg-sys",
- "pgrx-sql-entity-graph",
+ "pgrx-macros 0.12.5",
+ "pgrx-pg-sys 0.12.5 (git+https://github.com/Nit1n/pgrx?branch=develop)",
+ "pgrx-sql-entity-graph 0.12.5",
  "seahash",
  "serde",
  "serde_cbor",
@@ -1515,7 +1515,24 @@ dependencies = [
  "cc",
  "clang-sys",
  "eyre",
- "pgrx-pg-config",
+ "pgrx-pg-config 0.12.5",
+ "proc-macro2",
+ "quote",
+ "shlex",
+ "syn",
+ "walkdir",
+]
+
+[[package]]
+name = "pgrx-bindgen"
+version = "0.12.5"
+source = "git+https://github.com/Nit1n/pgrx?branch=develop#083909a78dd13bab830a29c63f4baf29ca59a9f1"
+dependencies = [
+ "bindgen",
+ "cc",
+ "clang-sys",
+ "eyre",
+ "pgrx-pg-config 0.12.5 (git+https://github.com/Nit1n/pgrx?branch=develop)",
  "proc-macro2",
  "quote",
  "shlex",
@@ -1527,10 +1544,21 @@ dependencies = [
 name = "pgrx-macros"
 version = "0.12.5"
 dependencies = [
- "pgrx-sql-entity-graph",
+ "pgrx-sql-entity-graph 0.12.5",
  "proc-macro2",
  "quote",
  "serde",
+ "syn",
+]
+
+[[package]]
+name = "pgrx-macros"
+version = "0.12.5"
+source = "git+https://github.com/Nit1n/pgrx?branch=develop#083909a78dd13bab830a29c63f4baf29ca59a9f1"
+dependencies = [
+ "pgrx-sql-entity-graph 0.12.5 (git+https://github.com/Nit1n/pgrx?branch=develop)",
+ "proc-macro2",
+ "quote",
  "syn",
 ]
 
@@ -1551,14 +1579,45 @@ dependencies = [
 ]
 
 [[package]]
+name = "pgrx-pg-config"
+version = "0.12.5"
+source = "git+https://github.com/Nit1n/pgrx?branch=develop#083909a78dd13bab830a29c63f4baf29ca59a9f1"
+dependencies = [
+ "cargo_toml",
+ "eyre",
+ "home",
+ "owo-colors 4.0.0",
+ "pathsearch",
+ "serde",
+ "serde_json",
+ "thiserror",
+ "toml 0.8.10",
+ "url",
+]
+
+[[package]]
 name = "pgrx-pg-sys"
 version = "0.12.5"
 dependencies = [
  "cee-scape",
  "libc",
- "pgrx-bindgen",
- "pgrx-macros",
- "pgrx-sql-entity-graph",
+ "pgrx-bindgen 0.12.5",
+ "pgrx-macros 0.12.5",
+ "pgrx-sql-entity-graph 0.12.5",
+ "serde",
+ "sptr",
+]
+
+[[package]]
+name = "pgrx-pg-sys"
+version = "0.12.5"
+source = "git+https://github.com/Nit1n/pgrx?branch=develop#083909a78dd13bab830a29c63f4baf29ca59a9f1"
+dependencies = [
+ "cee-scape",
+ "libc",
+ "pgrx-bindgen 0.12.5 (git+https://github.com/Nit1n/pgrx?branch=develop)",
+ "pgrx-macros 0.12.5 (git+https://github.com/Nit1n/pgrx?branch=develop)",
+ "pgrx-sql-entity-graph 0.12.5 (git+https://github.com/Nit1n/pgrx?branch=develop)",
  "serde",
  "sptr",
 ]
@@ -1580,6 +1639,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "pgrx-sql-entity-graph"
+version = "0.12.5"
+source = "git+https://github.com/Nit1n/pgrx?branch=develop#083909a78dd13bab830a29c63f4baf29ca59a9f1"
+dependencies = [
+ "convert_case",
+ "eyre",
+ "petgraph",
+ "proc-macro2",
+ "quote",
+ "syn",
+ "thiserror",
+ "unescape",
+]
+
+[[package]]
 name = "pgrx-tests"
 version = "0.12.5"
 dependencies = [
@@ -1589,8 +1663,8 @@ dependencies = [
  "owo-colors 4.0.0",
  "paste",
  "pgrx",
- "pgrx-macros",
- "pgrx-pg-config",
+ "pgrx-macros 0.12.5",
+ "pgrx-pg-config 0.12.5",
  "postgres",
  "proptest",
  "rand",
