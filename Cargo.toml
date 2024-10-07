@@ -56,7 +56,7 @@ cargo-pgrx = { path = "cargo-pgrx" }
 
 [workspace.dependencies]
 pgrx-macros = { path = "./pgrx-macros", version = "=0.12.5" }
-pgrx-pg-sys = { path = "./pgrx-pg-sys", version = "=0.12.5" }
+pgrx-pg-sys = { git = "https://github.com/Nit1n/pgrx", branch = "develop", version = "0.12.5" }
 pgrx-sql-entity-graph = { path = "./pgrx-sql-entity-graph", version = "=0.12.5" }
 pgrx-pg-config = { path = "./pgrx-pg-config", version = "=0.12.5" }
 pgrx-bindgen = { path = "./pgrx-bindgen", version = "0.12.5" }
